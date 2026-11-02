@@ -3,33 +3,37 @@
 This guide covers the PCSX2 emulator (Windows, macOS, Linux) and a real PlayStation 2.
 
 You need:
-- **Madden NFL 2005 (USA)** for PS2, as a disc or an ISO (game ID `SLUS-21000`, the Collector's Edition works too)
+- **Madden NFL 2005 (USA)** for PS2, as a disc or an ISO — **Collector's Edition (`SLUS-21025`)**. Have the standard edition (`SLUS-21000`)? Use the file in [`standard-edition/`](standard-edition/) — see the note below.
 - One of the roster files from this repo. Pick the one that matches how you play:
 
 | File | Use it with | Guide |
 |---|---|---|
-| `BASLUS-21000D2026.psu` | **mymc / mymc+**, uLaunchELF on a real PS2, or any tool that imports `.psu` saves | [Part 2A](#part-2a-import-with-mymc-psu-file) |
+| `BASLUS-21025D2026.psu` | **mymc / mymc+**, uLaunchELF on a real PS2, or any tool that imports `.psu` saves | [Part 2A](#part-2a-import-with-mymc-psu-file) |
 | `Madden05-2026-Roster.zip` | **PCSX2 folder** memory cards (copy the folder in) | [Parts 1–2](#part-1-download-and-extract) |
 | `Madden05-2026-Roster-Memcard.zip` | A complete **8 MB memory card** (`.ps2`) with the roster already on it. Use it as a PCSX2 card, or write it to a real card | [Part 2B](#part-2b-use-the-ready-made-memory-card) |
 
-> **mymc can't import `Madden05-2026-Roster.zip`.** That zip holds a PCSX2 *folder* save, and mymc only imports `.psu`/`.max` files. Use **`BASLUS-21000D2026.psu`** with mymc.
+> **Which edition do I have?** Check your disc or ISO name, or look at an existing Madden save on your card in mymc. Collector's Edition saves start with `BASLUS-21025`, standard edition saves with `BASLUS-21000`. The game only lists saves with its **own** ID, so a save for the wrong edition won't show up in the Load menu. The roster data is identical in both versions.
+>
+> **Standard edition (`SLUS-21000`):** use [`standard-edition/BASLUS-21000D2026.psu`](standard-edition/BASLUS-21000D2026.psu) in Part 2A instead.
+
+> **mymc can't import `Madden05-2026-Roster.zip`.** That zip holds a PCSX2 *folder* save, and mymc only imports `.psu`/`.max` files. Use **`BASLUS-21025D2026.psu`** with mymc.
 
 ---
 
 ## Part 2A: Import with mymc (`.psu` file)
 
-1. Download **`BASLUS-21000D2026.psu`** from this repo (**Download raw file**).
+1. Download **`BASLUS-21025D2026.psu`** from this repo (**Download raw file**).
 2. Open **mymc** (or mymc+) and use **File → Open** to open your memory card image (`.ps2`). For PCSX2 this is usually `Documents\PCSX2\memcards\Mcd001.ps2`.
    - The card must be a **file** card (`.ps2` file), not a folder card. mymc can't open folder cards.
    - Close PCSX2 first, so the card isn't in use.
-3. Click **Import** (or **File → Import**) and select **`BASLUS-21000D2026.psu`**.
+3. Click **Import** (or **File → Import**) and select **`BASLUS-21025D2026.psu`**.
 4. The save appears in the list as **"Madden NFL 2005 Roster 2026"** (about 286 KB).
 5. Close mymc, start PCSX2 with that card in **Slot 1**, and go to [Part 3](#part-3-load-the-roster-in-madden-2005).
 
 Command-line mymc/mymc+ equivalent:
 
 ```
-mymc Mcd001.ps2 import BASLUS-21000D2026.psu
+mymc Mcd001.ps2 import BASLUS-21025D2026.psu
 mymc Mcd001.ps2 dir
 ```
 
@@ -46,11 +50,11 @@ mymc Mcd001.ps2 dir
 
 1. Open `Madden05-2026-Roster.zip` in this repo and click **Download raw file** (the download icon at the top right).
 2. Right-click the downloaded zip and choose **Extract All…**.
-3. You should now have a folder named **`BASLUS-21000D2026`** containing four files:
+3. You should now have a folder named **`BASLUS-21025D2026`** containing four files:
 
    ```
-   BASLUS-21000D2026/
-   ├── BASLUS-21000D2026   (the roster data)
+   BASLUS-21025D2026/
+   ├── BASLUS-21025D2026   (the roster data)
    ├── icon.sys
    ├── view.ico
    └── _pcsx2_index
@@ -95,10 +99,10 @@ You only need **one** of these options.
 
 ### Step 4: Copy the roster in
 
-Copy the whole **`BASLUS-21000D2026`** folder into the memory card folder, so the path looks like this:
+Copy the whole **`BASLUS-21025D2026`** folder into the memory card folder, so the path looks like this:
 
 ```
-Documents\PCSX2\memcards\Mcd001.ps2\BASLUS-21000D2026\BASLUS-21000D2026
+Documents\PCSX2\memcards\Mcd001.ps2\BASLUS-21025D2026\BASLUS-21025D2026
 ```
 
 PCSX2 must be closed, or the game must not be running, when you copy files in.
@@ -130,7 +134,7 @@ If your Madden settings have **Auto Save** / **Auto Load** turned on, save the r
 
 ## Part 4: Real PlayStation 2 (optional)
 
-1. Copy **`BASLUS-21000D2026.psu`** to a USB stick.
+1. Copy **`BASLUS-21025D2026.psu`** to a USB stick.
 2. On a PS2 with **FreeMcBoot**, open **uLaunchELF**, browse to `mass:/`, select the `.psu`, press **R1 → psuPaste** to `mc0:/` (Slot 1).
 3. Load it in-game as in **Part 3**.
 
@@ -142,12 +146,13 @@ If your setup writes whole memory card images (e.g. MemCard PRO, SD2PSX), use `M
 
 | Problem | Fix |
 |---|---|
-| **mymc doesn't recognize the file** | You're importing the zip or the folder. mymc needs **`BASLUS-21000D2026.psu`**. Also make sure mymc opened a **file** card (`.ps2`), not a folder card. |
-| The roster doesn't appear in the Load menu | Make sure the folder sits **directly** inside the card folder (`Mcd001.ps2\BASLUS-21000D2026\…`), not nested one level deeper (`…\BASLUS-21000D2026\BASLUS-21000D2026\BASLUS-21000D2026`). Make sure the card is a **Folder** card in **Slot 1**. |
+| **mymc doesn't recognize the file** | You're importing the zip or the folder. mymc needs **`BASLUS-21025D2026.psu`**. Also make sure mymc opened a **file** card (`.ps2`), not a folder card. |
+| The roster doesn't appear in the Load menu | Make sure the folder sits **directly** inside the card folder (`Mcd001.ps2\BASLUS-21025D2026\…`), not nested one level deeper (`…\BASLUS-21025D2026\BASLUS-21025D2026\BASLUS-21025D2026`). Make sure the card is a **Folder** card in **Slot 1**. |
 | The save shows as corrupted | Re-download and re-extract the zip. Don't edit or rename any file inside the folder. |
 | Teams are still the old 2004 rosters | You loaded the game without loading the roster. Do **Part 3**, and for Franchise start a **new** franchise afterwards. |
 | PCSX2 doesn't show my copied save | Close PCSX2 completely, copy the folder, then reopen it. Folder cards are read when the game boots. |
-| I also have the 2024 roster | Both can live on the same card: `BASLUS-21000D2024` and `BASLUS-21000D2026` are separate saves. Just pick **Roster 2026** when loading. |
+| **The save is on the card but doesn't show in the game** | It's for the other edition of the game. Collector's Edition (`SLUS-21025`) needs `BASLUS-21025D2026`; standard edition (`SLUS-21000`) needs `standard-edition/BASLUS-21000D2026.psu`. |
+| I also have other Madden saves | Rosters, profiles and settings can share one card. Just pick **Roster 2026** when loading. |
 
 ---
 

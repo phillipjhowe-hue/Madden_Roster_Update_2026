@@ -1,5 +1,20 @@
 # Changelog
 
+## [2026.1.2] - 2026-11-02
+
+### Fixed
+- **Roster didn't appear in the game.** The save used the standard edition's ID (`BASLUS-21000…`), but the Collector's Edition (`SLUS-21025`) only lists saves named `BASLUS-21025…`. The save is now `BASLUS-21025D2026`.
+- The save is now rebuilt inside a roster save made by Madden 2005 itself: the game's table order (TEAM, DCHT, INJY, PLAY), its `icon.sys` and icon, and its file attributes (`0x8497`). Checksums are recomputed with the game's algorithm, verified against the game's own save.
+
+### Added
+- `standard-edition/BASLUS-21000D2026.psu`: the same roster for the standard edition (`SLUS-21000`).
+
+### Changed
+- `BASLUS-21000D2026.psu` (top level) replaced by `BASLUS-21025D2026.psu`. The zip and memory card now contain `BASLUS-21025D2026`.
+- HOW_TO_IMPORT.md: edition notes and a troubleshooting entry for saves that don't show up.
+
+Roster contents are unchanged from 2026.1.
+
 ## [2026.1.1] - 2026-11-02
 
 ### Added
