@@ -1,5 +1,15 @@
 # Changelog
 
+## [2026.1.1] - 2026-11-02
+
+### Added
+- `BASLUS-21000D2026.psu`: the roster as an EMS `.psu` save, so it can be imported with **mymc / mymc+** and uLaunchELF. Built and round-trip tested with mymc+ (import → extract gives a byte-identical roster).
+- `Madden05-2026-Roster-Memcard.zip`: a ready-made 8 MB PS2 memory card image (`.ps2`) containing the roster.
+
+### Fixed
+- mymc didn't recognize the roster: `Madden05-2026-Roster.zip` is a PCSX2 folder save, which mymc can't import. Use the new `.psu` instead.
+- HOW_TO_IMPORT.md: added mymc and memory-card-image instructions and a troubleshooting entry, and simplified the real-PS2 steps.
+
 ## [2026.1] - 2026-11-02
 
 First release: a 2026 NFL roster for **Madden NFL 2005 (PS2)**, built from the November 2024 roster save (`BASLUS-21000D2024`).

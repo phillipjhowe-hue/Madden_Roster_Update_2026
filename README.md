@@ -21,5 +21,7 @@ For a real PS2, copy the `BASLUS-21000D2026` save to a memory card with a save m
 | File | What it is |
 |---|---|
 | `Madden05-2026-Roster.zip` | The PS2 roster save (`BASLUS-21000D2026`) |
+| `BASLUS-21000D2026.psu` | Same save as a `.psu`, for **mymc / mymc+** and uLaunchELF |
+| `Madden05-2026-Roster-Memcard.zip` | Ready-made 8 MB `.ps2` memory card with the roster on it |
 | `HOW_TO_IMPORT.md` | Step-by-step import guide (PCSX2 and real PS2) |
 | `CHANGELOG.md` | Full list of changes, including team-by-team moves |
