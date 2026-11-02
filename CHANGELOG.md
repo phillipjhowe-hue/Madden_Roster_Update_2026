@@ -1,5 +1,18 @@
 # Changelog
 
+## [2026.1.3] - 2026-11-02
+
+### Fixed
+- **Game froze on the roster screen and when starting Franchise.** The data carried over from the 2024 base file had values the game never produces. All tables now match the game's own roster save:
+  - **Depth charts** trimmed to the game's slot counts (57 per team: QB 3, HB 3, FB 1, WR 6, TE 3, 2 per OL spot, DT 4, CB 5, K 1, P 1, KR 2, PR 1, KOS 1, LS 1, 3rd-down RB 1) and sorted by team → player ID like the game's own file. Real NFL starters kept at the top.
+  - **Team table** taken from the game's own save (rivals were off by one, some teams had rival 0, and city IDs didn't exist). Only display names changed (Commanders, Las Vegas, Los Angeles). Short codes stay SD/OAK/STL for now.
+  - **Player IDs** renumbered 1–1934, with the two ID fields equal, as in the game's file (one player had ID 0).
+  - **Payroll**: contracts scaled so no team is over the cap; team payroll values reset into the game's range.
+  - **Jersey #0** (29 players) renumbered; the game doesn't use 0.
+  - Every other player field clamped to the game's own min/max.
+
+Players, ratings and teams are otherwise unchanged.
+
 ## [2026.1.2] - 2026-11-02
 
 ### Fixed
